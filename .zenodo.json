@@ -1,0 +1,45 @@
+{
+  "title": "lgg_regrowth: Biologically conditioned deep learning for glioma growth prediction",
+  "description": "Training, evaluation, and inference code for a biologically conditioned 3D U-Net that predicts diffuse lower-grade glioma growth patterns by integrating IDH mutation status, histological subtype, and cortical architecture type via Feature-wise Linear Modulation (FiLM).",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {"name": "Wartha, Max", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "B\u00f6hm, Petra", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Atli, Baran", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria", "orcid": ""},
+    {"name": "Gmeiner, Matthias", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Aichholzer, Martin", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Serra, Carlo", "affiliation": "Department of Neurosurgery, University Hospital Zurich, University of Zurich, Switzerland"},
+    {"name": "Sonnberger, Michael", "affiliation": "Institute of Neuroradiology, Kepler University Hospital, Johannes Kepler University, Linz, Austria"},
+    {"name": "Stroh, Nico", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Aspalter, Stefan", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Aufschnaiter-Hiessb\u00f6ck, Kathrin", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Rossmann, Tobias", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Leibetseder, Annette", "affiliation": "Department of Neurology, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Pichler, Josef", "affiliation": "Department of Internal Medicine and Neurooncology, Neuromed Campus, Kepler University Hospital, Linz, Austria"},
+    {"name": "Thomae, Wolfgang", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Dorfer, Christian", "affiliation": "Department of Neurosurgery, Karl Landsteiner University of Health and Sciences, St. P\u00f6lten, Austria"},
+    {"name": "Gruber, Andreas", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Stefanits, Harald", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Rauch, Philip", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"}
+  ],
+  "keywords": [
+    "glioma",
+    "deep learning",
+    "tumour growth prediction",
+    "FiLM",
+    "3D U-Net",
+    "cortical architecture",
+    "IDH mutation",
+    "diffuse lower-grade glioma",
+    "medical image analysis"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/PRauch1/GliomaSimulation",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "grants": []
+}
