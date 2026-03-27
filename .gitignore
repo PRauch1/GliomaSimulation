@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+
+# Data and model files (do not commit patient data or trained weights)
+dataset/
+validation/
+checkpoints/
+*.pth
+*.nii
+*.nii.gz
+
+# Evaluation outputs
+eval_outputs*/
+GLOBAL_EVAL/
+curves_raw/
+curves_enf/
+*.csv
+!film.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
