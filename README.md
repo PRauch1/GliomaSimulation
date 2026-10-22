@@ -2,14 +2,14 @@
 
 This repository contains the training, evaluation, and inference code for the biologically conditioned 3D U-Net described in:
 
-> **Biologically conditioned deep learning predicts glioma growth patterns beyond imaging alone**
-> Wartha M, Böhm P, Atli B, Gmeiner M, Aichholzer M, Serra C, Sonnberger M, Stroh N, Aspalter S, Aufschnaiter-Hiessböck K, Rossmann T, Leibetseder A, Pichler J, Thomae W, Dorfer C, Gruber A, Stefanits H, Rauch P.
+> **Toward digital twins of postoperative glioma growth with a three-dimensional U-Net informed by cortical architecture, isocitrate dehydrogenase status and histology**
+> Wartha M, Böhm P, Atli B, Gmeiner M, Aichholzer M, Serra C, Sonnberger M, Stroh N, Aspalter S, Aufschnaiter-Hiessböck K, Rossmann T, Leibetseder A, Pichler J, Thomae W, Wculek T, Dorfer C, Gruber A, Stefanits H, Rauch P.
 
 ## Overview
 
 Standard deep learning models for glioma growth prediction treat progression as geometric extrapolation from imaging alone. This framework conditions a 3D U-Net on three biological variables routinely available for diffuse lower-grade gliomas — **IDH mutation status**, **histological subtype**, and **cortical architecture type** — via Feature-wise Linear Modulation (FiLM). A residual tumour enforcement prior preserves confirmed postoperative disease in all predictions.
 
-The model was trained on 159 patients (Kepler University Hospital, Linz) and externally validated on 112 independent patients from the publicly available [UCSF-ALPTDG dataset](https://doi.org/10.1148/ryai.230182).
+The model was trained on 159 patients (Kepler University Hospital, Linz) and externally validated on 112 independent patients from the publicly available [UCSF-ALPTDG dataset](https://doi.org/10.1148/ryai.230182). The scripts for the external validation against a no-change reference (baseline tumour mask carried forward; tumour masks without resection cavity) are in [`validation_ucsf_alptdg/`](validation_ucsf_alptdg/README.md).
 
 ## Repository Structure
 
@@ -36,6 +36,20 @@ lgg_regrowth/
     ├── eval_types.py         # Dataclass for per-follow-up metric rows
     ├── predict_common.py     # Shared inference logic (baseline and FiLM)
     └── validate_common.py    # Full validation pipeline with aggregate reporting
+validation_ucsf_alptdg/          # External validation on UCSF-ALPTDG against a no-change reference
+├── README.md                    # Expected data layout and commands of the primary run
+├── scripts/
+│   ├── ucsf_reference_metrics.py # No-change reference (baseline mask carried forward)
+│   ├── ucsf_infer.py             # Inference, label controls, threshold sweep, cavity analysis, calibration counts
+│   ├── ucsf_spatial.py           # Voxel ranking (model, distance, FLAIR intensity), oracle placement, time probe
+│   └── repro_probe2.py           # Comparison of preprocessing variants with an earlier evaluation
+├── analysis_tumor.py            # Paired comparisons with the no-change reference, bootstrap CIs
+├── clinical_srep.py             # Treatment, annotated change, progression, interval dependence
+├── spatial_srep.py              # Summary of the voxel ranking and time probe
+├── subgroups_srep.py            # Descriptive subgroup results
+├── numbers_srep.py              # Collection of all reported values
+├── figs_srep.py, fig3_select.py, fig3_srep.py, fig4_srep.py  # Figures
+└── make_suppdata.py             # Per-patient results table
 ```
 
 ## Requirements
@@ -172,6 +186,10 @@ python validate.py \
     --model-path checkpoints_baseline/best_unet_film.pth \
     --threshold 0.5
 ```
+
+### Validation against a no-change reference (UCSF-ALPTDG)
+
+The analyses of the manuscript — comparison with a no-change reference that carries the baseline tumour mask forward, tumour masks without resection cavity, label controls (permuted and swapped conditioning variables), inference with the interval set to zero and ranking of new tumour voxels — are in [`validation_ucsf_alptdg/`](validation_ucsf_alptdg/README.md), together with the expected data layout and the commands of the primary run. The same scripts are provided as Supplementary Software 1 of the manuscript.
 
 ## Inference on New Cases
 
