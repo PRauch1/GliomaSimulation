@@ -1,6 +1,6 @@
 {
   "title": "lgg_regrowth: Biologically conditioned deep learning for glioma growth prediction",
-  "description": "Training, evaluation, and inference code for a biologically conditioned 3D U-Net that predicts diffuse lower-grade glioma growth patterns by integrating IDH mutation status, histological subtype, and cortical architecture type via Feature-wise Linear Modulation (FiLM).",
+  "description": "Training, evaluation, and inference code for a biologically conditioned 3D U-Net that predicts diffuse lower-grade glioma growth patterns by integrating IDH mutation status, histological subtype, and cortical architecture type via Feature-wise Linear Modulation (FiLM). The repository also contains the scripts for the external validation on the UCSF-ALPTDG dataset against a no-change reference.",
   "upload_type": "software",
   "license": "MIT",
   "creators": [
@@ -18,6 +18,7 @@
     {"name": "Leibetseder, Annette", "affiliation": "Department of Neurology, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
     {"name": "Pichler, Josef", "affiliation": "Department of Internal Medicine and Neurooncology, Neuromed Campus, Kepler University Hospital, Linz, Austria"},
     {"name": "Thomae, Wolfgang", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
+    {"name": "Wculek, Theresa", "affiliation": "Department of Neurosurgery, Karl Landsteiner University of Health Sciences, St. P\u00f6lten, Austria"},
     {"name": "Dorfer, Christian", "affiliation": "Department of Neurosurgery, Karl Landsteiner University of Health and Sciences, St. P\u00f6lten, Austria"},
     {"name": "Gruber, Andreas", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},
     {"name": "Stefanits, Harald", "affiliation": "Department of Neurosurgery, Kepler University Hospital, Johannes Kepler University Linz, Austria"},

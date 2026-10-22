@@ -40,6 +40,11 @@ curves_enf/
 *.csv
 !film.csv
 
+# Derived data of the UCSF-ALPTDG validation (not distributed)
+validation_ucsf_alptdg/data/
+validation_ucsf_alptdg/infer/
+validation_ucsf_alptdg/figs/
+
 # Jupyter
 .ipynb_checkpoints/
 
